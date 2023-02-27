@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<form method="post" th:action="@{/documents/create}" th:object="${document}">
+    <input  placeholder="document with text to create" th:field="*{text}">
+    <button type="submit" name="action">save</button>
+</form>
+
+
+</body>
+</html>

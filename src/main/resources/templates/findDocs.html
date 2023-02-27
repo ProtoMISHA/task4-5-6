@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="get" th:action="@{/documents/searchResult}" th:object="${searchDTO}">
+    <input placeholder="document with text to find" th:field="*{search}">
+    <button type="submit" name="action">save</button>
+</form>
+</body>
+</html>

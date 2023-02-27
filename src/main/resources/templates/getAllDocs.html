@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+    <thead>
+    <tr>
+        <th th:text="id"/>
+        <th th:text="text"/>
+        <th th:text="date"/>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="doc, iStat : ${docPage.content}">
+        <td th:text="${doc.id}"/>
+        <td th:text="${doc.text}"/>
+        <td th:text="${doc.dateCreate}"/>
+    </tr>
+    </tbody>
+</table>
+<div th:if="${docPage.totalPages > 0}" class="pagination"
+     th:each="pageNumber : ${pagesNumbers}">
+    <a th:href="@{/getAll(size=${docPage.size}, page=${pageNumber})}"
+       th:text=${pageNumber}
+       th:class="${pageNumber==docPage.number + 1} ? active"></a>
+</div>
+</body>
+</html>
